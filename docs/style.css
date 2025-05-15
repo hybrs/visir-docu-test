@@ -1,38 +1,81 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-}
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
 
-.sidebar {
-  width: 200px;
-  background-color: #f4f4f4;
-  padding: 20px;
-  height: 100vh;
-  box-sizing: border-box;
-  position: fixed;
-}
+    .sidebar {
+      width: 100vw;
+      max-width: 250px;
+      height: 150vh;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: width 0.3s ease;
+      overflow: hidden;
+    }
 
-.sidebar h2 {
-  text-align: center;
-}
+    .sidebar.collapsed {
+      width: 60px;
+    }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
+    .sidebar h2 {
+      font-size: 18px;
+      margin: 0 0 20px 0;
+    }
 
-.sidebar ul li {
-  margin-bottom: 10px;
-}
+    .sidebar.collapsed h2 {
+      display: none;
+    }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
-}
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-.content {
-  margin-left: 220px;
-  padding: 20px;
-  flex: 1;
-}
+    .sidebar ul li a {
+      text-decoration: none;
+      display: block;
+      padding: 8px 0;
+      color: #333;
+    }
+    
+    .sidebar li :hover {
+      font-weight: bold;
+      color: #2067af;
+    }
+
+    .sidebar.collapsed ul li a {
+      text-align: center;
+      display: none;
+      padding: 10px 0;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 20px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+
+  footer {
+      width: 100%;
+      background-color: #eee;
+      /* position: absolute; */
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ccc;
+    }
